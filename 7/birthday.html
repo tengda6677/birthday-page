@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, 段美丽!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1>🎉 Happy Birthday, 段美丽! 🎉</h1>
+        <p>愿你的生日充满欢笑与喜悦，愿你在新的一岁里幸福快乐！</p>
+        <div class="image-container">
+            <img src="birthday-cake.jpg" alt="生日蛋糕" class="birthday-cake">
+        </div>
+        <div class="fireworks">
+            <div class="firework" id="firework1"></div>
+            <div class="firework" id="firework2"></div>
+            <div class="firework" id="firework3"></div>
+        </div>
+        <footer>
+            <p>Created with ❤️ by [Your Name]</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // 获取音频元素
+        var backgroundMusic = document.getElementById('background-music');
+
+        // 尝试在页面加载时播放音乐
+        window.onload = function() {
+            backgroundMusic.play().catch(function() {
+                // 如果自动播放失败，等待用户交互后播放
+                document.body.addEventListener('click', function() {
+                    backgroundMusic.play();
+                });
+            });
+        };
+    </script>
+</body>
+</html>
